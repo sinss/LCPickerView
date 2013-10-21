@@ -33,8 +33,9 @@
 
 - (IBAction)show:(id)sender
 {
-    //ass mask
-    self.maskView = [[UIView alloc] initWithFrame:self.navigationController.view.frame];
+    //add mask
+    //self.maskView = [[UIView alloc] initWithFrame:self.navigationController.view.frame];
+    self.maskView = [[UIView alloc] initWithFrame:self.view.bounds];
     [_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0]];
     [self.view addSubview:_maskView];
     LCTableViewPickerControl *selectAgeView = [[LCTableViewPickerControl alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, kPickerControlWidth, kPickerControlAgeHeight) title:@"Please pick a item" value:_pickValue items:@[@"item1",@"item2",@"item3",@"item4",@"item5",@"item6"]];
