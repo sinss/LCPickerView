@@ -26,9 +26,21 @@
 
 @property (weak) id <LCItemPickerDelegate> delegate;
 
+/**
+ title : the picker view title
+ value : set default value
+ array : select items
+ */
 - (id)initWithFrame:(CGRect)frame title:(NSString*)title value:(id)value items:(NSArray*)array;
 
+/**
+ show pikerView
+ */
 - (void)show;
+
+/**
+ dismiss pickerView
+ */
 - (void)dismiss;
 
 @end

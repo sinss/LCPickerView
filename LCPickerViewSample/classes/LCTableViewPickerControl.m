@@ -43,6 +43,9 @@
     return self;
 }
 
+/**
+ initialize the controll
+ */
 - (void)initializeControlWithFrame:(CGRect)frame
 {
     /*
@@ -84,7 +87,9 @@
 {
     UIViewController *parentView = (UIViewController*)_delegate;
     //add mask
-    
+    /**
+     if your parentView has several suubViews , then you must insert the right subView
+     */
     self.maskView = [[UIView alloc] initWithFrame:parentView.view.bounds];
     [_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0]];
     [parentView.view insertSubview:_maskView atIndex:0];
