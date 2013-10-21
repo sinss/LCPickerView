@@ -33,13 +33,13 @@
 
 - (IBAction)show:(id)sender
 {
-    LCTableViewPickerControl *selectAgeView = [[LCTableViewPickerControl alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, kPickerControlWidth, kPickerControlAgeHeight) title:@"Please pick an item" value:_pickValue items:@[@"item1",@"item2",@"item3",@"item4",@"item5",@"item6"]];
-    [selectAgeView setDelegate:self];
+    LCTableViewPickerControl *pickerView = [[LCTableViewPickerControl alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, kPickerControlWidth, kPickerControlAgeHeight) title:@"Please pick an item" value:_pickValue items:@[@"item1",@"item2",@"item3",@"item4",@"item5",@"item6"]];
+    [pickerView setDelegate:self];
+    [pickerView setTag:0];
     
+    [self.view addSubview:pickerView];
     
-    [self.view addSubview:selectAgeView];
-    
-    [selectAgeView show];
+    [pickerView show];
 }
 
 - (void)dismissPickerControl:(LCTableViewPickerControl*)view
@@ -55,14 +55,18 @@
     /*
      Check item is NSString or NSNumber , if it is necessary
      */
-    if ([item isKindOfClass:[NSString class]])
+    if (view.tag == 0)
     {
-        
+        if ([item isKindOfClass:[NSString class]])
+        {
+            
+        }
+        else if ([item isKindOfClass:[NSNumber class]])
+        {
+            
+        }
     }
-    else if ([item isKindOfClass:[NSNumber class]])
-    {
-        
-    }
+    
     self.pickValue = item;
     [_resultLabel setText:[NSString stringWithFormat:@"%@", item]];
     

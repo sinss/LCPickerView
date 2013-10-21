@@ -25,22 +25,11 @@
 @interface LCTableViewPickerControl : UIView <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak) id <LCItemPickerDelegate> delegate;
+@property (nonatomic, assign) NSInteger tag;
 
-/**
- title : the picker view title
- value : set default value
- array : select items
- */
 - (id)initWithFrame:(CGRect)frame title:(NSString*)title value:(id)value items:(NSArray*)array;
 
-/**
- show pikerView
- */
 - (void)show;
-
-/**
- dismiss pickerView
- */
 - (void)dismiss;
 
 @end

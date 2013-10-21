@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) UINavigationBar *navBar;
 @property (nonatomic, strong) UIView *maskView;
+@property (nonatomic, strong) UITableView *aTableView;
 @end
 
 @implementation LCTableViewPickerControl
@@ -43,9 +44,6 @@
     return self;
 }
 
-/**
- initialize the controll
- */
 - (void)initializeControlWithFrame:(CGRect)frame
 {
     /*
@@ -68,11 +66,11 @@
     _navBar.items = [NSArray arrayWithObject:topItem];
     
     
-    UITableView *aTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavBarHeight, frame.size.width, frame.size.height - kNavBarHeight) style:UITableViewStylePlain];
-    [aTableView setDelegate:self];
-    [aTableView setDataSource:self];
+    self.aTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavBarHeight, frame.size.width, frame.size.height - kNavBarHeight) style:UITableViewStylePlain];
+    [_aTableView setDelegate:self];
+    [_aTableView setDataSource:self];
     [self addSubview:_navBar];
-    [self addSubview:aTableView];
+    [self addSubview:_aTableView];
     
     //add UIPanGesture
     UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(move:)];
@@ -87,18 +85,18 @@
 {
     UIViewController *parentView = (UIViewController*)_delegate;
     //add mask
-    /**
-     if your parentView has several suubViews , then you must insert the right subView
-     */
     self.maskView = [[UIView alloc] initWithFrame:parentView.view.bounds];
     [_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0]];
-    [parentView.view insertSubview:_maskView atIndex:0];
+    [parentView.view insertSubview:_maskView atIndex:2];
     
     [UIView animateWithDuration:kAnimationDuration delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
         [self setFrame:CGRectMake(0, parentView.view.frame.size.height - kPickerControlAgeHeight, kPickerControlWidth, kPickerControlAgeHeight)];
         [_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.6]];
     } completion:^(BOOL finished){
-        
+        //scroll to currentValue
+        NSInteger index = [_items indexOfObject:_currentVale];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+        [_aTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
     }];
 }
 
