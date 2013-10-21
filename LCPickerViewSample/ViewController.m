@@ -34,34 +34,21 @@
 - (IBAction)show:(id)sender
 {
     //add mask
-    //self.maskView = [[UIView alloc] initWithFrame:self.navigationController.view.frame];
-    self.maskView = [[UIView alloc] initWithFrame:self.view.bounds];
-    [_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0]];
-    [self.view addSubview:_maskView];
+    //self.maskView = [[UIView alloc] initWithFrame:self.view.bounds];
+    //[_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0]];
+    //[self.view addSubview:_maskView];
     LCTableViewPickerControl *selectAgeView = [[LCTableViewPickerControl alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, kPickerControlWidth, kPickerControlAgeHeight) title:@"Please pick an item" value:_pickValue items:@[@"item1",@"item2",@"item3",@"item4",@"item5",@"item6"]];
     [selectAgeView setDelegate:self];
     
     
     [self.view addSubview:selectAgeView];
     
-    [UIView animateWithDuration:kAnimationDuration delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
-        [selectAgeView setFrame:CGRectMake(0, self.view.frame.size.height - kPickerControlAgeHeight, kPickerControlWidth, kPickerControlAgeHeight)];
-        [_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.6]];
-    } completion:^(BOOL finished){
-        
-    }];
+    [selectAgeView show];
 }
 
-- (void)dismissPickerControl:(UIView*)view
+- (void)dismissPickerControl:(LCTableViewPickerControl*)view
 {
-    //animation to dismiss
-    [UIView animateWithDuration:kAnimationDuration delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
-        [view setFrame:CGRectMake(0, self.view.frame.size.height, kPickerControlAgeHeight, kPickerControlWidth)];
-        [_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0]];
-    } completion:^(BOOL finished){
-        [view removeFromSuperview];
-        [_maskView removeFromSuperview];
-    }];
+    [view dismiss];
 }
 
 #pragma mark - LCTableViewPickerDelegate

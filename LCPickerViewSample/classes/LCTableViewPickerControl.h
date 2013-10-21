@@ -28,4 +28,7 @@
 
 - (id)initWithFrame:(CGRect)frame title:(NSString*)title value:(id)value items:(NSArray*)array;
 
+- (void)show;
+- (void)dismiss;
+
 @end

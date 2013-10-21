@@ -17,6 +17,7 @@
 @property (weak) id currentVale;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) UINavigationBar *navBar;
+@property (nonatomic, strong) UIView *maskView;
 @end
 
 @implementation LCTableViewPickerControl
@@ -61,9 +62,6 @@
     /*
      create dismissItem
      */
-    //UIBarButtonItem *dismissItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(dismissPickerView:)];
-    //topItem.rightBarButtonItems = [NSArray arrayWithObject:dismissItem];
-    
     _navBar.items = [NSArray arrayWithObject:topItem];
     
     
@@ -82,6 +80,38 @@
     
 }
 
+- (void)show
+{
+    UIViewController *parentView = (UIViewController*)_delegate;
+    //add mask
+    
+    self.maskView = [[UIView alloc] initWithFrame:parentView.view.bounds];
+    [_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0]];
+    [parentView.view insertSubview:_maskView atIndex:0];
+    
+    [UIView animateWithDuration:kAnimationDuration delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
+        [self setFrame:CGRectMake(0, parentView.view.frame.size.height - kPickerControlAgeHeight, kPickerControlWidth, kPickerControlAgeHeight)];
+        [_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.6]];
+    } completion:^(BOOL finished){
+        
+    }];
+}
+
+- (void)dismiss
+{
+    UIViewController *parentView = (UIViewController*)_delegate;
+    
+    //animation to dismiss
+    [UIView animateWithDuration:kAnimationDuration delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
+        [self setFrame:CGRectMake(0, parentView.view.frame.size.height, kPickerControlAgeHeight, kPickerControlWidth)];
+        [_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0]];
+    } completion:^(BOOL finished){
+        [self removeFromSuperview];
+        [_maskView removeFromSuperview];
+    }];
+
+}
+
 - (void)dismissPickerView:(id)sender
 {
     /*
@@ -96,9 +126,10 @@
     if ([gestureRecognizer state] == UIGestureRecognizerStateBegan || [gestureRecognizer state] == UIGestureRecognizerStateChanged)
     {
         CGPoint translation = [gestureRecognizer translationInView:self];
+        
         if(translation.y < 0)
             return;
-        //CGPoint translatedCenter = CGPointMake([self center].x + translation.x, [self center].y + translation.y);
+        
         CGPoint translatedCenter = CGPointMake([self center].x, [self center].y + translation.y);
         NSLog(@"y:%f", translation.y);
         [self setCenter:translatedCenter];
