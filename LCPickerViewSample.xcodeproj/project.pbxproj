@@ -21,6 +21,7 @@
 		7C64E4711814D4BB00E30DC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C64E4531814D4BB00E30DC1 /* UIKit.framework */; };
 		7C64E4791814D4BB00E30DC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C64E4771814D4BB00E30DC1 /* InfoPlist.strings */; };
 		7C64E47B1814D4BB00E30DC1 /* LCPickerViewSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C64E47A1814D4BB00E30DC1 /* LCPickerViewSampleTests.m */; };
+		7C64E4871814D50000E30DC1 /* LCTableViewPickerControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C64E4861814D50000E30DC1 /* LCTableViewPickerControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		7C64E4761814D4BB00E30DC1 /* LCPickerViewSampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LCPickerViewSampleTests-Info.plist"; sourceTree = "<group>"; };
 		7C64E4781814D4BB00E30DC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7C64E47A1814D4BB00E30DC1 /* LCPickerViewSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCPickerViewSampleTests.m; sourceTree = "<group>"; };
+		7C64E4851814D50000E30DC1 /* LCTableViewPickerControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTableViewPickerControl.h; sourceTree = "<group>"; };
+		7C64E4861814D50000E30DC1 /* LCTableViewPickerControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTableViewPickerControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,7 @@
 		7C64E4431814D4BB00E30DC1 = {
 			isa = PBXGroup;
 			children = (
+				7C64E4841814D50000E30DC1 /* classes */,
 				7C64E4551814D4BB00E30DC1 /* LCPickerViewSample */,
 				7C64E4741814D4BB00E30DC1 /* LCPickerViewSampleTests */,
 				7C64E44E1814D4BB00E30DC1 /* Frameworks */,
@@ -150,6 +154,16 @@
 				7C64E4771814D4BB00E30DC1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7C64E4841814D50000E30DC1 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				7C64E4851814D50000E30DC1 /* LCTableViewPickerControl.h */,
+				7C64E4861814D50000E30DC1 /* LCTableViewPickerControl.m */,
+			);
+			name = classes;
+			path = LCPickerViewSample/classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +265,7 @@
 			files = (
 				7C64E4661814D4BB00E30DC1 /* ViewController.m in Sources */,
 				7C64E4601814D4BB00E30DC1 /* AppDelegate.m in Sources */,
+				7C64E4871814D50000E30DC1 /* LCTableViewPickerControl.m in Sources */,
 				7C64E45C1814D4BB00E30DC1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,7 +349,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -367,7 +382,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

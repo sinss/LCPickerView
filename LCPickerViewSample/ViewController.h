@@ -10,4 +10,8 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UILabel *resultLabel;
+
+- (IBAction)show:(id)sender;
+
 @end
