@@ -7,12 +7,12 @@
 //
 
 #import "ViewController.h"
-#import "LCNumberInputControl.h"
+#import "LCTableViewPickerControl.h"
 
-@interface ViewController () <LCNumberInputDelegate>
+@interface ViewController () <LCItemPickerDelegate>
 
 @property (nonatomic, strong) UIView *maskView;
-@property (nonatomic, strong) NSNumber *pickValue;
+@property (weak) id pickValue;
 
 @end
 
@@ -33,21 +33,16 @@
 
 - (IBAction)show:(id)sender
 {
-    LCNumberInputControl *inputView = [[[NSBundle mainBundle] loadNibNamed:@"LCNumberInputControl" owner:self options:nil] objectAtIndex:0];
-    [inputView setFrame:CGRectMake(0, self.view.frame.size.height, kNumberControlWidth, kNumberControlHeight)];
-    [inputView setDelegate:self];
-    [inputView setTag:0];
-    [inputView setInputType:numberInputTypeInteger];
-    //current pick value
-    [inputView setInputResult:[NSNumber numberWithInteger:[_resultLabel.text integerValue]]];
-    [inputView.titleBar.topItem setTitle:[NSString stringWithFormat:@"Please input a number"]];
-    [inputView.numberField setPlaceholder:[NSString stringWithFormat:@"Input you number"]];
-    [self.view addSubview:inputView];
+    LCTableViewPickerControl *pickerView = [[LCTableViewPickerControl alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, kPickerControlWidth, kPickerControlAgeHeight) title:@"Please pick an item" value:_pickValue items:@[@"item1",@"item2",@"item3",@"item4",@"item5",@"item6"]];
+    [pickerView setDelegate:self];
+    [pickerView setTag:0];
     
-    [inputView show];
+    [self.view addSubview:pickerView];
+    
+    [pickerView show];
 }
 
-- (void)dismissPickerControl:(LCNumberInputControl*)view
+- (void)dismissPickerControl:(LCTableViewPickerControl*)view
 {
     [view dismiss];
 }
@@ -55,16 +50,32 @@
 #pragma mark - LCTableViewPickerDelegate
 
 
-- (void)numberControl:(LCNumberInputControl *)view didInputWithNumber:(NSNumber *)number
+- (void)selectControl:(LCTableViewPickerControl*)view didSelectWithItem:(id)item
 {
-    self.pickValue = number;
-    [_resultLabel setText:[NSString stringWithFormat:@"%@", number]];
+    /*
+     Check item is NSString or NSNumber , if it is necessary
+     */
+    if (view.tag == 0)
+    {
+        if ([item isKindOfClass:[NSString class]])
+        {
+            
+        }
+        else if ([item isKindOfClass:[NSNumber class]])
+        {
+            
+        }
+    }
+    
+    self.pickValue = item;
+    [_resultLabel setText:[NSString stringWithFormat:@"%@", item]];
     
     [self dismissPickerControl:view];
 }
 
-- (void)numberControl:(LCNumberInputControl *)view didCancelWithNumber:(NSNumber *)number
+- (void)selectControl:(LCTableViewPickerControl *)view didCancelWithItem:(id)item
 {
+    
     [self dismissPickerControl:view];
 }
 @end

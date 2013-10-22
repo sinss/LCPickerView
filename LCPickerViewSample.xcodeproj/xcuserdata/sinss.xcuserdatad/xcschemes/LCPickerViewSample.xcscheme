@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7C64E44B1814D4BB00E30DC1"
-               BuildableName = "LCNumberInputSample.app"
-               BlueprintName = "LCNumberInputSample"
-               ReferencedContainer = "container:LCNumberInputSample.xcodeproj">
+               BuildableName = "LCPickerViewSample.app"
+               BlueprintName = "LCPickerViewSample"
+               ReferencedContainer = "container:LCPickerViewSample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7C64E46C1814D4BB00E30DC1"
-               BuildableName = "LCNumberInputSampleTests.xctest"
-               BlueprintName = "LCNumberInputSampleTests"
-               ReferencedContainer = "container:LCNumberInputSample.xcodeproj">
+               BuildableName = "LCPickerViewSampleTests.xctest"
+               BlueprintName = "LCPickerViewSampleTests"
+               ReferencedContainer = "container:LCPickerViewSample.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7C64E44B1814D4BB00E30DC1"
-            BuildableName = "LCNumberInputSample.app"
-            BlueprintName = "LCNumberInputSample"
-            ReferencedContainer = "container:LCNumberInputSample.xcodeproj">
+            BuildableName = "LCPickerViewSample.app"
+            BlueprintName = "LCPickerViewSample"
+            ReferencedContainer = "container:LCPickerViewSample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7C64E44B1814D4BB00E30DC1"
-            BuildableName = "LCNumberInputSample.app"
-            BlueprintName = "LCNumberInputSample"
-            ReferencedContainer = "container:LCNumberInputSample.xcodeproj">
+            BuildableName = "LCPickerViewSample.app"
+            BlueprintName = "LCPickerViewSample"
+            ReferencedContainer = "container:LCPickerViewSample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7C64E44B1814D4BB00E30DC1"
-            BuildableName = "LCNumberInputSample.app"
-            BlueprintName = "LCNumberInputSample"
-            ReferencedContainer = "container:LCNumberInputSample.xcodeproj">
+            BuildableName = "LCPickerViewSample.app"
+            BlueprintName = "LCPickerViewSample"
+            ReferencedContainer = "container:LCPickerViewSample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
