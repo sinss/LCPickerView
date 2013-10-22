@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FBF83DB1816E35700526AB2 /* LCNumberInputControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FBF83D91816E35700526AB2 /* LCNumberInputControl.m */; };
+		0FBF83DC1816E35700526AB2 /* LCNumberInputControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FBF83D91816E35700526AB2 /* LCNumberInputControl.m */; };
+		0FBF83DD1816E35700526AB2 /* LCNumberInputControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FBF83DA1816E35700526AB2 /* LCNumberInputControl.xib */; };
+		0FBF83DE1816E35700526AB2 /* LCNumberInputControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FBF83DA1816E35700526AB2 /* LCNumberInputControl.xib */; };
+		0FBF83E11816E5ED00526AB2 /* MathFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FBF83E01816E5ED00526AB2 /* MathFunction.m */; };
+		0FBF83E21816E5ED00526AB2 /* MathFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FBF83E01816E5ED00526AB2 /* MathFunction.m */; };
 		7C64E4501814D4BB00E30DC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C64E44F1814D4BB00E30DC1 /* Foundation.framework */; };
 		7C64E4521814D4BB00E30DC1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C64E4511814D4BB00E30DC1 /* CoreGraphics.framework */; };
 		7C64E4541814D4BB00E30DC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C64E4531814D4BB00E30DC1 /* UIKit.framework */; };
@@ -21,7 +27,6 @@
 		7C64E4711814D4BB00E30DC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C64E4531814D4BB00E30DC1 /* UIKit.framework */; };
 		7C64E4791814D4BB00E30DC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C64E4771814D4BB00E30DC1 /* InfoPlist.strings */; };
 		7C64E47B1814D4BB00E30DC1 /* LCPickerViewSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C64E47A1814D4BB00E30DC1 /* LCPickerViewSampleTests.m */; };
-		7C64E4871814D50000E30DC1 /* LCTableViewPickerControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C64E4861814D50000E30DC1 /* LCTableViewPickerControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,27 +40,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7C64E44C1814D4BB00E30DC1 /* LCPickerViewSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCPickerViewSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FBF83D81816E35700526AB2 /* LCNumberInputControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNumberInputControl.h; sourceTree = "<group>"; };
+		0FBF83D91816E35700526AB2 /* LCNumberInputControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNumberInputControl.m; sourceTree = "<group>"; };
+		0FBF83DA1816E35700526AB2 /* LCNumberInputControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LCNumberInputControl.xib; sourceTree = "<group>"; };
+		0FBF83DF1816E5ED00526AB2 /* MathFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathFunction.h; sourceTree = "<group>"; };
+		0FBF83E01816E5ED00526AB2 /* MathFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathFunction.m; sourceTree = "<group>"; };
+		7C64E44C1814D4BB00E30DC1 /* LCNumberInputSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCNumberInputSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C64E44F1814D4BB00E30DC1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7C64E4511814D4BB00E30DC1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		7C64E4531814D4BB00E30DC1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		7C64E4571814D4BB00E30DC1 /* LCPickerViewSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LCPickerViewSample-Info.plist"; sourceTree = "<group>"; };
+		7C64E4571814D4BB00E30DC1 /* LCNumberInputSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LCNumberInputSample-Info.plist"; sourceTree = "<group>"; };
 		7C64E4591814D4BB00E30DC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7C64E45B1814D4BB00E30DC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7C64E45D1814D4BB00E30DC1 /* LCPickerViewSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LCPickerViewSample-Prefix.pch"; sourceTree = "<group>"; };
+		7C64E45D1814D4BB00E30DC1 /* LCNumberInputSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LCNumberInputSample-Prefix.pch"; sourceTree = "<group>"; };
 		7C64E45E1814D4BB00E30DC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7C64E45F1814D4BB00E30DC1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7C64E4621814D4BB00E30DC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7C64E4641814D4BB00E30DC1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		7C64E4651814D4BB00E30DC1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7C64E4671814D4BB00E30DC1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		7C64E46D1814D4BB00E30DC1 /* LCPickerViewSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LCPickerViewSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C64E46D1814D4BB00E30DC1 /* LCNumberInputSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LCNumberInputSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C64E46E1814D4BB00E30DC1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		7C64E4761814D4BB00E30DC1 /* LCPickerViewSampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LCPickerViewSampleTests-Info.plist"; sourceTree = "<group>"; };
+		7C64E4761814D4BB00E30DC1 /* LCNumberInputSampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LCNumberInputSampleTests-Info.plist"; sourceTree = "<group>"; };
 		7C64E4781814D4BB00E30DC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7C64E47A1814D4BB00E30DC1 /* LCPickerViewSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCPickerViewSampleTests.m; sourceTree = "<group>"; };
-		7C64E4851814D50000E30DC1 /* LCTableViewPickerControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTableViewPickerControl.h; sourceTree = "<group>"; };
-		7C64E4861814D50000E30DC1 /* LCTableViewPickerControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTableViewPickerControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +104,8 @@
 		7C64E44D1814D4BB00E30DC1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7C64E44C1814D4BB00E30DC1 /* LCPickerViewSample.app */,
-				7C64E46D1814D4BB00E30DC1 /* LCPickerViewSampleTests.xctest */,
+				7C64E44C1814D4BB00E30DC1 /* LCNumberInputSample.app */,
+				7C64E46D1814D4BB00E30DC1 /* LCNumberInputSampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,10 +138,10 @@
 		7C64E4561814D4BB00E30DC1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7C64E4571814D4BB00E30DC1 /* LCPickerViewSample-Info.plist */,
+				7C64E4571814D4BB00E30DC1 /* LCNumberInputSample-Info.plist */,
 				7C64E4581814D4BB00E30DC1 /* InfoPlist.strings */,
 				7C64E45B1814D4BB00E30DC1 /* main.m */,
-				7C64E45D1814D4BB00E30DC1 /* LCPickerViewSample-Prefix.pch */,
+				7C64E45D1814D4BB00E30DC1 /* LCNumberInputSample-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -150,7 +158,7 @@
 		7C64E4751814D4BB00E30DC1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7C64E4761814D4BB00E30DC1 /* LCPickerViewSampleTests-Info.plist */,
+				7C64E4761814D4BB00E30DC1 /* LCNumberInputSampleTests-Info.plist */,
 				7C64E4771814D4BB00E30DC1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -159,8 +167,11 @@
 		7C64E4841814D50000E30DC1 /* classes */ = {
 			isa = PBXGroup;
 			children = (
-				7C64E4851814D50000E30DC1 /* LCTableViewPickerControl.h */,
-				7C64E4861814D50000E30DC1 /* LCTableViewPickerControl.m */,
+				0FBF83DF1816E5ED00526AB2 /* MathFunction.h */,
+				0FBF83E01816E5ED00526AB2 /* MathFunction.m */,
+				0FBF83D81816E35700526AB2 /* LCNumberInputControl.h */,
+				0FBF83D91816E35700526AB2 /* LCNumberInputControl.m */,
+				0FBF83DA1816E35700526AB2 /* LCNumberInputControl.xib */,
 			);
 			name = classes;
 			path = LCPickerViewSample/classes;
@@ -169,9 +180,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7C64E44B1814D4BB00E30DC1 /* LCPickerViewSample */ = {
+		7C64E44B1814D4BB00E30DC1 /* LCNumberInputSample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7C64E47E1814D4BB00E30DC1 /* Build configuration list for PBXNativeTarget "LCPickerViewSample" */;
+			buildConfigurationList = 7C64E47E1814D4BB00E30DC1 /* Build configuration list for PBXNativeTarget "LCNumberInputSample" */;
 			buildPhases = (
 				7C64E4481814D4BB00E30DC1 /* Sources */,
 				7C64E4491814D4BB00E30DC1 /* Frameworks */,
@@ -181,14 +192,14 @@
 			);
 			dependencies = (
 			);
-			name = LCPickerViewSample;
+			name = LCNumberInputSample;
 			productName = LCPickerViewSample;
-			productReference = 7C64E44C1814D4BB00E30DC1 /* LCPickerViewSample.app */;
+			productReference = 7C64E44C1814D4BB00E30DC1 /* LCNumberInputSample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7C64E46C1814D4BB00E30DC1 /* LCPickerViewSampleTests */ = {
+		7C64E46C1814D4BB00E30DC1 /* LCNumberInputSampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7C64E4811814D4BB00E30DC1 /* Build configuration list for PBXNativeTarget "LCPickerViewSampleTests" */;
+			buildConfigurationList = 7C64E4811814D4BB00E30DC1 /* Build configuration list for PBXNativeTarget "LCNumberInputSampleTests" */;
 			buildPhases = (
 				7C64E4691814D4BB00E30DC1 /* Sources */,
 				7C64E46A1814D4BB00E30DC1 /* Frameworks */,
@@ -199,9 +210,9 @@
 			dependencies = (
 				7C64E4731814D4BB00E30DC1 /* PBXTargetDependency */,
 			);
-			name = LCPickerViewSampleTests;
+			name = LCNumberInputSampleTests;
 			productName = LCPickerViewSampleTests;
-			productReference = 7C64E46D1814D4BB00E30DC1 /* LCPickerViewSampleTests.xctest */;
+			productReference = 7C64E46D1814D4BB00E30DC1 /* LCNumberInputSampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -218,7 +229,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7C64E4471814D4BB00E30DC1 /* Build configuration list for PBXProject "LCPickerViewSample" */;
+			buildConfigurationList = 7C64E4471814D4BB00E30DC1 /* Build configuration list for PBXProject "LCNumberInputSample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -231,8 +242,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7C64E44B1814D4BB00E30DC1 /* LCPickerViewSample */,
-				7C64E46C1814D4BB00E30DC1 /* LCPickerViewSampleTests */,
+				7C64E44B1814D4BB00E30DC1 /* LCNumberInputSample */,
+				7C64E46C1814D4BB00E30DC1 /* LCNumberInputSampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -244,6 +255,7 @@
 			files = (
 				7C64E4681814D4BB00E30DC1 /* Images.xcassets in Resources */,
 				7C64E45A1814D4BB00E30DC1 /* InfoPlist.strings in Resources */,
+				0FBF83DD1816E35700526AB2 /* LCNumberInputControl.xib in Resources */,
 				7C64E4631814D4BB00E30DC1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FBF83DE1816E35700526AB2 /* LCNumberInputControl.xib in Resources */,
 				7C64E4791814D4BB00E30DC1 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,8 +277,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C64E4661814D4BB00E30DC1 /* ViewController.m in Sources */,
+				0FBF83E11816E5ED00526AB2 /* MathFunction.m in Sources */,
 				7C64E4601814D4BB00E30DC1 /* AppDelegate.m in Sources */,
-				7C64E4871814D50000E30DC1 /* LCTableViewPickerControl.m in Sources */,
+				0FBF83DB1816E35700526AB2 /* LCNumberInputControl.m in Sources */,
 				7C64E45C1814D4BB00E30DC1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +288,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FBF83DC1816E35700526AB2 /* LCNumberInputControl.m in Sources */,
+				0FBF83E21816E5ED00526AB2 /* MathFunction.m in Sources */,
 				7C64E47B1814D4BB00E30DC1 /* LCPickerViewSampleTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,7 +299,7 @@
 /* Begin PBXTargetDependency section */
 		7C64E4731814D4BB00E30DC1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7C64E44B1814D4BB00E30DC1 /* LCPickerViewSample */;
+			target = 7C64E44B1814D4BB00E30DC1 /* LCNumberInputSample */;
 			targetProxy = 7C64E4721814D4BB00E30DC1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -394,9 +410,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LCPickerViewSample/LCPickerViewSample-Prefix.pch";
-				INFOPLIST_FILE = "LCPickerViewSample/LCPickerViewSample-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "LCPickerViewSample/LCNumberInputSample-Prefix.pch";
+				INFOPLIST_FILE = "LCPickerViewSample/LCNumberInputSample-Info.plist";
+				PRODUCT_NAME = LCNumberInputSample;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -407,9 +423,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LCPickerViewSample/LCPickerViewSample-Prefix.pch";
-				INFOPLIST_FILE = "LCPickerViewSample/LCPickerViewSample-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "LCPickerViewSample/LCNumberInputSample-Prefix.pch";
+				INFOPLIST_FILE = "LCPickerViewSample/LCNumberInputSample-Info.plist";
+				PRODUCT_NAME = LCNumberInputSample;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -430,8 +446,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "LCPickerViewSampleTests/LCPickerViewSampleTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "LCPickerViewSampleTests/LCNumberInputSampleTests-Info.plist";
+				PRODUCT_NAME = LCNumberInputSampleTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -449,8 +465,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LCPickerViewSample/LCPickerViewSample-Prefix.pch";
-				INFOPLIST_FILE = "LCPickerViewSampleTests/LCPickerViewSampleTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "LCPickerViewSampleTests/LCNumberInputSampleTests-Info.plist";
+				PRODUCT_NAME = LCNumberInputSampleTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -459,7 +475,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7C64E4471814D4BB00E30DC1 /* Build configuration list for PBXProject "LCPickerViewSample" */ = {
+		7C64E4471814D4BB00E30DC1 /* Build configuration list for PBXProject "LCNumberInputSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7C64E47C1814D4BB00E30DC1 /* Debug */,
@@ -468,21 +484,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7C64E47E1814D4BB00E30DC1 /* Build configuration list for PBXNativeTarget "LCPickerViewSample" */ = {
+		7C64E47E1814D4BB00E30DC1 /* Build configuration list for PBXNativeTarget "LCNumberInputSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7C64E47F1814D4BB00E30DC1 /* Debug */,
 				7C64E4801814D4BB00E30DC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		7C64E4811814D4BB00E30DC1 /* Build configuration list for PBXNativeTarget "LCPickerViewSampleTests" */ = {
+		7C64E4811814D4BB00E30DC1 /* Build configuration list for PBXNativeTarget "LCNumberInputSampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7C64E4821814D4BB00E30DC1 /* Debug */,
 				7C64E4831814D4BB00E30DC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
