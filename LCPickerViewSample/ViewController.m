@@ -30,6 +30,31 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)showWithBlock:(id)sender
+{
+    LCTableViewPickerControl *pickerView = [[LCTableViewPickerControl alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, kPickerControlWidth, kPickerControlAgeHeight) title:@"Please pick an item" value:_pickValue items:@[@"item1",@"item2",@"item3",@"item4",@"item5",@"item6"]];
+    [pickerView setTag:1];
+    
+    [self.view addSubview:pickerView];
+    
+    [pickerView showInView:self.view block:^(id sender, id item) {
+        LCTableViewPickerControl *view = (LCTableViewPickerControl*)sender;
+        if (view.tag == 1)
+        {
+            if ([item isKindOfClass:[NSString class]])
+            {
+                NSLog(@"pick a string : %@", item);
+            }
+            else if ([item isKindOfClass:[NSNumber class]])
+            {
+                NSLog(@"pick a number : %@", item);
+            }
+        }
+        [view dismiss];
+    }];
+}
+
+
 
 - (IBAction)show:(id)sender
 {
@@ -39,7 +64,7 @@
     
     [self.view addSubview:pickerView];
     
-    [pickerView show];
+    [pickerView showInView:self.view];
 }
 
 - (void)dismissPickerControl:(LCTableViewPickerControl*)view

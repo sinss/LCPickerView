@@ -8,6 +8,7 @@
 
 #import "LCTableViewPickerControl.h"
 
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 #define kNavBarHeight 44
 #define cellIdentifier @"itemPickerCellIdentifier"
 
@@ -19,7 +20,11 @@
 @property (nonatomic, strong) UINavigationBar *navBar;
 @property (nonatomic, strong) UIView *maskView;
 @property (nonatomic, strong) UITableView *aTableView;
+<<<<<<< HEAD
 @property (nonatomic, assign) CGPoint offset;
+=======
+@property (nonatomic, strong) UITapGestureRecognizer *tapGesture;
+>>>>>>> FETCH_HEAD
 @end
 
 @implementation LCTableViewPickerControl
@@ -83,32 +88,74 @@
     [_navBar addGestureRecognizer:panRecognizer];
 }
 
-- (void)show
+- (void)showInView:(UIView *)view
 {
-    UIViewController *parentView = (UIViewController*)_delegate;
     //add mask
-    self.maskView = [[UIView alloc] initWithFrame:parentView.view.bounds];
+    self.maskView = [[UIView alloc] initWithFrame:view.bounds];
     [_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0]];
-    [parentView.view insertSubview:_maskView atIndex:2];
+    [view insertSubview:_maskView atIndex:2];
+    
+    //add a Tap gesture in maskView
+    if (!_tapGesture)
+    {
+        self.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+        [_maskView addGestureRecognizer:_tapGesture];
+    }
+    
+    [_maskView addGestureRecognizer:_tapGesture];
     
     [UIView animateWithDuration:kAnimationDuration delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
+<<<<<<< HEAD
         [self setFrame:CGRectMake(0, parentView.view.frame.size.height - kPickerControlAgeHeight + self.offset.y, kPickerControlWidth, kPickerControlAgeHeight)];
+=======
+        [self setFrame:CGRectMake(0, SCREEN_HEIGHT - kPickerControlAgeHeight - 10, kPickerControlWidth, kPickerControlAgeHeight)];
+>>>>>>> FETCH_HEAD
         [_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.6]];
     } completion:^(BOOL finished){
         //scroll to currentValue
+        [UIView animateWithDuration:0.2 animations:^{
+            [self setFrame:CGRectMake(0, SCREEN_HEIGHT - kPickerControlAgeHeight + 5, kPickerControlWidth, kPickerControlAgeHeight)];
+        } completion:^(BOOL finished){
+            [UIView animateWithDuration:0.1 animations:^{
+                [self setFrame:CGRectMake(0, SCREEN_HEIGHT - kPickerControlAgeHeight, kPickerControlWidth, kPickerControlAgeHeight)];
+            } completion:^(BOOL finished){
+                //configure your settings after view animation completion
+            }];
+        }];
+
         NSInteger index = [_items indexOfObject:_currentVale];
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
         [_aTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
     }];
 }
 
+- (void)showInView:(UIView*)view block:(LCPickerCallback)callback
+{
+    [self showInView:view];
+    
+    self.callback = callback;
+}
+
+- (void)tap:(UITapGestureRecognizer*)sender
+{
+    //common delegate way
+    if ([self.delegate respondsToSelector:@selector(selectControl:didSelectWithItem:)])
+        [self.delegate selectControl:self didSelectWithItem:@""];
+    
+    //callback with block
+    if (self.callback)
+        self.callback(self, @"");
+}
+
 - (void)dismiss
 {
-    UIViewController *parentView = (UIViewController*)_delegate;
-    
     //animation to dismiss
     [UIView animateWithDuration:kAnimationDuration delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
+<<<<<<< HEAD
         [self setFrame:CGRectMake(0, parentView.view.frame.size.height + self.offset.y, kPickerControlAgeHeight, kPickerControlWidth)];
+=======
+        [self setFrame:CGRectMake(0, SCREEN_HEIGHT, kPickerControlAgeHeight, kPickerControlWidth)];
+>>>>>>> FETCH_HEAD
         [_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0]];
     } completion:^(BOOL finished){
         [self removeFromSuperview];
@@ -120,9 +167,14 @@
 - (void)dismissPickerView:(id)sender
 {
     /*
-     if press cancel button
+     if you use block then comment these lines
      */
-    [self.delegate selectControl:self didSelectWithItem:[NSString stringWithFormat:@""]];
+    if ([self.delegate respondsToSelector:@selector(selectControl:didSelectWithItem:)])
+        [self.delegate selectControl:self didSelectWithItem:[NSString stringWithFormat:@""]];
+    
+    //callback with block
+    if (self.callback)
+        self.callback(self, @"");
 }
 
 #pragma mark - handle PanGesture
@@ -145,7 +197,14 @@
         CGPoint translation = [gestureRecognizer translationInView:self];
         if(translation.y < 0)
             return;
+<<<<<<< HEAD
         [self.delegate selectControl:self didCancelWithItem:[NSString stringWithFormat:@""]];
+=======
+        if ([self.delegate respondsToSelector:@selector(selectControl:didSelectWithItem:)])
+            [self.delegate selectControl:self didSelectWithItem:[NSString stringWithFormat:@""]];
+        if (self.callback)
+            self.callback(self, @"");
+>>>>>>> FETCH_HEAD
     }
 }
 /*
@@ -221,7 +280,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.delegate selectControl:self didSelectWithItem:[_items objectAtIndex:indexPath.row]];
+    if ([self.delegate respondsToSelector:@selector(selectControl:didSelectWithItem:)])
+        [self.delegate selectControl:self didSelectWithItem:[_items objectAtIndex:indexPath.row]];
+    
+    if (self.callback)
+        self.callback(self, _items[indexPath.row]);
 }
 
 

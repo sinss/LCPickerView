@@ -14,4 +14,6 @@
 
 - (IBAction)show:(id)sender;
 
+- (IBAction)showWithBlock:(id)sender;
+
 @end
