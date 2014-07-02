@@ -19,17 +19,20 @@
 @property (nonatomic, strong) UINavigationBar *navBar;
 @property (nonatomic, strong) UIView *maskView;
 @property (nonatomic, strong) UITableView *aTableView;
+@property (nonatomic, assign) CGPoint offset;
 @end
 
 @implementation LCTableViewPickerControl
 
-- (id)initWithFrame:(CGRect)frame title:(NSString*)title value:(id)value items:(NSArray *)array
+- (id)initWithFrame:(CGRect)frame title:(NSString*)title value:(id)value items:(NSArray *)array offset:(CGPoint)offset
 {
     if (self = [super initWithFrame:frame])
     {
         self.currentVale = value;
         self.items = [NSArray arrayWithArray:array];
         self.title = title;
+        self.offset = offset;
+        
         [self initializeControlWithFrame:frame];
     }
     return self;
@@ -78,7 +81,6 @@
     [panRecognizer setMaximumNumberOfTouches:1];
     [panRecognizer setDelegate:self];
     [_navBar addGestureRecognizer:panRecognizer];
-    
 }
 
 - (void)show
@@ -90,13 +92,13 @@
     [parentView.view insertSubview:_maskView atIndex:2];
     
     [UIView animateWithDuration:kAnimationDuration delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
-        [self setFrame:CGRectMake(0, parentView.view.frame.size.height - kPickerControlAgeHeight, kPickerControlWidth, kPickerControlAgeHeight)];
+        [self setFrame:CGRectMake(0, parentView.view.frame.size.height - kPickerControlAgeHeight + self.offset.y, kPickerControlWidth, kPickerControlAgeHeight)];
         [_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.6]];
     } completion:^(BOOL finished){
         //scroll to currentValue
         NSInteger index = [_items indexOfObject:_currentVale];
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
-        [_aTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
+        [_aTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
     }];
 }
 
@@ -106,7 +108,7 @@
     
     //animation to dismiss
     [UIView animateWithDuration:kAnimationDuration delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
-        [self setFrame:CGRectMake(0, parentView.view.frame.size.height, kPickerControlAgeHeight, kPickerControlWidth)];
+        [self setFrame:CGRectMake(0, parentView.view.frame.size.height + self.offset.y, kPickerControlAgeHeight, kPickerControlWidth)];
         [_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0]];
     } completion:^(BOOL finished){
         [self removeFromSuperview];
@@ -143,7 +145,7 @@
         CGPoint translation = [gestureRecognizer translationInView:self];
         if(translation.y < 0)
             return;
-        [self.delegate selectControl:self didSelectWithItem:[NSString stringWithFormat:@""]];
+        [self.delegate selectControl:self didCancelWithItem:[NSString stringWithFormat:@""]];
     }
 }
 /*
@@ -211,7 +213,7 @@
         }
     }
     
-    [cell.textLabel setText:[NSString stringWithFormat:@"%@",[_items objectAtIndex:row]]];
+    [cell.textLabel setText:[NSString stringWithFormat:@"%@",item]];
     
     
     return cell;

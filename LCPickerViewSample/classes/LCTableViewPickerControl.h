@@ -10,7 +10,7 @@
 
 #define kPickerControlWidth 320
 #define kPickerControlAgeHeight 300
-#define kAnimationDuration 0.3
+#define kAnimationDuration 0.4
 #define kPickerTitleBarColor [UIColor redColor]
 
 @class LCTableViewPickerControl;
@@ -26,8 +26,9 @@
 
 @property (weak) id <LCItemPickerDelegate> delegate;
 @property (nonatomic, assign) NSInteger tag;
+@property (nonatomic, strong) NSString *key;
 
-- (id)initWithFrame:(CGRect)frame title:(NSString*)title value:(id)value items:(NSArray*)array;
+- (id)initWithFrame:(CGRect)frame title:(NSString*)title value:(id)value items:(NSArray*)array offset:(CGPoint)offset;
 
 - (void)show;
 - (void)dismiss;

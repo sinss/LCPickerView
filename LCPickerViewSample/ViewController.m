@@ -33,7 +33,7 @@
 
 - (IBAction)show:(id)sender
 {
-    LCTableViewPickerControl *pickerView = [[LCTableViewPickerControl alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, kPickerControlWidth, kPickerControlAgeHeight) title:@"Please pick an item" value:_pickValue items:@[@"item1",@"item2",@"item3",@"item4",@"item5",@"item6"]];
+    LCTableViewPickerControl *pickerView = [[LCTableViewPickerControl alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, kPickerControlWidth, kPickerControlAgeHeight) title:@"Please pick an item" value:_pickValue items:@[@"item1",@"item2",@"item3",@"item4",@"item5",@"item6"] offset:CGPointMake(0, 0)];
     [pickerView setDelegate:self];
     [pickerView setTag:0];
     
