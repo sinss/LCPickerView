@@ -13,6 +13,8 @@
 #define kAnimationDuration 0.3
 #define kPickerTitleBarColor [UIColor redColor]
 
+typedef void (^LCPickerCallback) (id sender, id item);
+
 @class LCTableViewPickerControl;
 @protocol LCItemPickerDelegate <NSObject>
 
@@ -26,10 +28,12 @@
 
 @property (weak) id <LCItemPickerDelegate> delegate;
 @property (nonatomic, assign) NSInteger tag;
+@property (copy, readwrite) LCPickerCallback callback;
 
 - (id)initWithFrame:(CGRect)frame title:(NSString*)title value:(id)value items:(NSArray*)array;
 
-- (void)show;
+- (void)showInView:(UIView*)view;
+- (void)showInView:(UIView*)view block:(LCPickerCallback)callback;
 - (void)dismiss;
 
 @end
