@@ -20,11 +20,9 @@
 @property (nonatomic, strong) UINavigationBar *navBar;
 @property (nonatomic, strong) UIView *maskView;
 @property (nonatomic, strong) UITableView *aTableView;
-<<<<<<< HEAD
 @property (nonatomic, assign) CGPoint offset;
-=======
 @property (nonatomic, strong) UITapGestureRecognizer *tapGesture;
->>>>>>> FETCH_HEAD
+
 @end
 
 @implementation LCTableViewPickerControl
@@ -105,11 +103,7 @@
     [_maskView addGestureRecognizer:_tapGesture];
     
     [UIView animateWithDuration:kAnimationDuration delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
-<<<<<<< HEAD
-        [self setFrame:CGRectMake(0, parentView.view.frame.size.height - kPickerControlAgeHeight + self.offset.y, kPickerControlWidth, kPickerControlAgeHeight)];
-=======
         [self setFrame:CGRectMake(0, SCREEN_HEIGHT - kPickerControlAgeHeight - 10, kPickerControlWidth, kPickerControlAgeHeight)];
->>>>>>> FETCH_HEAD
         [_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.6]];
     } completion:^(BOOL finished){
         //scroll to currentValue
@@ -151,11 +145,7 @@
 {
     //animation to dismiss
     [UIView animateWithDuration:kAnimationDuration delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
-<<<<<<< HEAD
-        [self setFrame:CGRectMake(0, parentView.view.frame.size.height + self.offset.y, kPickerControlAgeHeight, kPickerControlWidth)];
-=======
         [self setFrame:CGRectMake(0, SCREEN_HEIGHT, kPickerControlAgeHeight, kPickerControlWidth)];
->>>>>>> FETCH_HEAD
         [_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0]];
     } completion:^(BOOL finished){
         [self removeFromSuperview];
@@ -197,14 +187,10 @@
         CGPoint translation = [gestureRecognizer translationInView:self];
         if(translation.y < 0)
             return;
-<<<<<<< HEAD
-        [self.delegate selectControl:self didCancelWithItem:[NSString stringWithFormat:@""]];
-=======
         if ([self.delegate respondsToSelector:@selector(selectControl:didSelectWithItem:)])
             [self.delegate selectControl:self didSelectWithItem:[NSString stringWithFormat:@""]];
         if (self.callback)
             self.callback(self, @"");
->>>>>>> FETCH_HEAD
     }
 }
 /*
